@@ -17,12 +17,12 @@ target_link_libraries(QtQuickControls2Application Qt5::Widgets Qt5::Qml)
 
 install(TARGETS QtQuickControls2Application DESTINATION bin COMPONENT binaries)
 install(FILES QtQuickControls2Application.desktop DESTINATION share/applications/ COMPONENT desktop)
-install(FILES QtQuickControls2Application.svg DESTINATION share/icons/hicolor/scalable/apps/ COMPONENT desktop)
+install(FILES QtQuickControls2Application.png DESTINATION share/icons/hicolor/scalable/apps/ COMPONENT desktop)
 
 set(APP_NAME QtQuickControls2Application)
 set(APP_TARGET_ARCH x86_64)
 set(APP_DESKTOP_FILE_PATH AppDir/${CMAKE_INSTALL_PREFIX}/share/applications/QtQuickControls2Application.desktop)
-set(APP_ICON_FILE_PATH AppDir/${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/QtQuickControls2Application.svg)
+set(APP_ICON_FILE_PATH AppDir/${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/QtQuickControls2Application.png)
 
 set(ENV ARCH=${APP_TARGET_ARCH})
 add_custom_target(AppImage
