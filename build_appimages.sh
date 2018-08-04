@@ -60,8 +60,6 @@ pushd QtWebEngineApplication
 popd
 
 pushd QtWidgetsApplication
-    export QML_SOURCES_PATHS="${PWD}"
-
     mkdir build
     pushd build
         qmake CONFIG+=release PREFIX=/usr ../QtWidgetsApplication.pro || exit 1
