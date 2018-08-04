@@ -6,11 +6,11 @@ BASE_DIR=${PWD}
 mkdir ${BASE_DIR}/out
 
 # Download tools
-#wget -N https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-"$ARCH".AppImage
-#chmod +x linuxdeploy-"$ARCH".AppImage
+wget -N https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-"$ARCH".AppImage
+chmod +x linuxdeploy-"$ARCH".AppImage
 
-#wget -N https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-"$ARCH".AppImage
-#chmod +x linuxdeploy-plugin-qt-"$ARCH".AppImage
+wget -N https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-"$ARCH".AppImage
+chmod +x linuxdeploy-plugin-qt-"$ARCH".AppImage
 
 LINUXDEPLOY_BIN=${PWD}/linuxdeploy-"$ARCH".AppImage
 LINUXDEPLOY_PLUGIN_QT_BIN=${PWD}/linuxdeploy-plugin-qt-"$ARCH".AppImage
