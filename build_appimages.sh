@@ -28,7 +28,7 @@ build_appimage() {
     mv -v *AppImage ${BASE_DIR}/out || return 1
 }
 
-## Build projects
+### Build projects
 pushd QtQuickControls2Application
     # This env variable is used by the qt plugin to search the qml sources in other paths than the AppDir
     # it's mandatory to use when your qml files are embed as Qt resources into the main binary.
@@ -56,5 +56,17 @@ pushd QtWebEngineApplication
         INSTALL_ROOT=${PWD}/AppDir make install || exit 1
 
         build_appimage QtWebEngineApplication ${PWD}/AppDir || exit 1
+    popd
+popd
+
+pushd QtWidgetsApplication
+    export QML_SOURCES_PATHS="${PWD}"
+
+    mkdir build
+    pushd build
+        qmake CONFIG+=release PREFIX=/usr ../QtWidgetsApplication.pro || exit 1
+        INSTALL_ROOT=${PWD}/AppDir make install || exit 1
+
+        build_appimage QtWidgetsApplication ${PWD}/AppDir || exit 1
     popd
 popd

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QtWidgetsApplication
+Type=Application
+Exec=QtWidgetsApplication
+TryExec=QtWidgetsApplication
+Icon=QtWidgetsApplication
+Categories=Development;
