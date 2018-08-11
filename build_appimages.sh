@@ -55,6 +55,10 @@ pushd QtWebEngineApplication
         qmake CONFIG+=release PREFIX=/usr ../QtWebEngineApplication.pro || exit 1
         INSTALL_ROOT=${PWD}/AppDir make install || exit 1
 
+        # Include libnss related files
+        mkdir -p ${PWD}/AppDir/usr/lib/
+        cp -r /usr/lib/x86_64-linux-gnu/nss ${PWD}/AppDir/usr/lib/
+
         build_appimage QtWebEngineApplication ${PWD}/AppDir || exit 1
     popd
 popd
