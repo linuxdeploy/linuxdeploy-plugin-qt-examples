@@ -31,7 +31,7 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 target.path = $$PREFIX/bin
-icon.path = $$PREFIX/share/icons/hicolor/512x512
+icon.path = $$PREFIX/share/icons/hicolor/512x512/apps
 icon.files = QtWidgetsApplication.png
 
 desktop_entry.path = $$PREFIX/share/applications
