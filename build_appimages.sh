@@ -3,7 +3,7 @@
 ARCH="x86_64"
 
 BASE_DIR=${PWD}
-mkdir ${BASE_DIR}/out
+mkdir -p ${BASE_DIR}/out
 
 # Download tools
 wget -N https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-"$ARCH".AppImage
