@@ -13,6 +13,7 @@ addons:
     - g++
     - qt5-default
     - qtbase5-dev
+    - qtdeclarative5-dev
     - cmake
 
 script:
