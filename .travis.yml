@@ -20,8 +20,10 @@ addons:
     - cmake
 
 script:
-- export QT_PREFIX=/opt/qt510/
+- export QT_PREFIX=/opt/qt510
+
 - $QT_PREFIX/bin/qt510-env.sh
+- export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QT_PREFIX}/lib"
 - export CMAKE_PREFIX_PATH=$QT_PREFIX/lib/cmake
 - export QT_SELECT=qt5
 - bash -xe build_appimages.sh

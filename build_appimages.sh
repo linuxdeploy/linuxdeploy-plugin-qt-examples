@@ -34,7 +34,7 @@ pushd QtQuickControls2Application
 
     # This env variable is used by the qt plugin to search the qml modules in other paths than the default
     # Qt qml dir.
-    export QML_MODULES_PATHS=""
+    export QML_MODULES_PATHS="${QML_MODULES_PATHS}"
 
     mkdir build
     pushd build
