@@ -7,18 +7,23 @@ notifications:
 
 addons:
   apt:
+    sources:
+    - sourceline: 'ppa:beineri/opt-qt-5.10.1-trusty'
     update: true
     packages:
     - gcc
     - g++
-    - qt5-default
-    - qtbase5-dev
-    - qtdeclarative5-dev-tools
-    - qtdeclarative5-dev
-    - qtwebengine5-dev
+    - qt510-meta-minimal
+    - qt510declarative
+    - qt510webengine
+    - mesa-common-dev
     - cmake
 
 script:
+- export QT_PREFIX=/opt/qt510/
+- $QT_PREFIX/bin/qt510-env.sh
+- export CMAKE_PREFIX_PATH=$QT_PREFIX/lib/cmake
+- export QT_SELECT=qt5
 - bash -xe build_appimages.sh
 
 after_success:
