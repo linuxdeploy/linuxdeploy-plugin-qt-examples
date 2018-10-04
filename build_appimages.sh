@@ -21,9 +21,7 @@ build_appimage() {
 
     echo "Building AppImage for ${APP_NAME}"
 
-    ${LINUXDEPLOY_BIN} --app-name ${APP_NAME} --appdir ${APP_DIR} || return 1
-    ${LINUXDEPLOY_PLUGIN_QT_BIN} --appdir ${APP_DIR} || return 1
-    ${LINUXDEPLOY_BIN} --app-name ${APP_NAME} --appdir ${APP_DIR} --output appimage || return 1
+    ${LINUXDEPLOY_BIN} --appdir ${APP_DIR} --plugin qt --output appimage || return 1
 
     mv -v *AppImage ${BASE_DIR}/out || return 1
 }
