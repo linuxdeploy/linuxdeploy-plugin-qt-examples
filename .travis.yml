@@ -26,6 +26,7 @@ script:
 - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QT_PREFIX}/lib"
 - export CMAKE_PREFIX_PATH=$QT_PREFIX/lib/cmake
 - export QT_SELECT=qt5
+- sudo ln -s $QT_PREFIX/bin/qmake /usr/bin/qmake
 - bash -xe build_appimages.sh
 
 after_success:
