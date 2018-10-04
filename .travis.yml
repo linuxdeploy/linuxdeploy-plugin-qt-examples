@@ -15,6 +15,7 @@ addons:
     - qtbase5-dev
     - qtdeclarative5-dev-tools
     - qtdeclarative5-dev
+    - qtwebengine5-dev
     - cmake
 
 script:
