@@ -18,15 +18,17 @@ addons:
     - qt510webengine
     - mesa-common-dev
     - cmake
+install:
+- export QT_PREFIX=/opt/qt510
+- mkdir -p $HOME/.config/qtchooser
+- echo "${QT_PREFIX}/bin" > $HOME/.config/qtchooser/qt5.10.conf
+- echo "${QT_PREFIX}/lib" >> $HOME/.config/qtchooser/qt5.10.conf
 
 script:
-- export QT_PREFIX=/opt/qt510
-
 - $QT_PREFIX/bin/qt510-env.sh
 - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QT_PREFIX}/lib"
 - export CMAKE_PREFIX_PATH=$QT_PREFIX/lib/cmake
-- export QT_SELECT=qt5
-- sudo ln -s $QT_PREFIX/bin/qmake /usr/bin/qmake
+- export QT_SELECT=qt5.10
 - bash -xe build_appimages.sh
 
 after_success:
