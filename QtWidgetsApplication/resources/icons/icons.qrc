@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>scalable/list-add.svg</file>
+    </qresource>
+</RCC>
