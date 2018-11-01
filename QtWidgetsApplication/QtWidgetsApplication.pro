@@ -37,3 +37,6 @@ icon.files = QtWidgetsApplication.png
 desktop_entry.path = $$PREFIX/share/applications
 desktop_entry.files = QtWidgetsApplication.desktop
 INSTALLS += target icon desktop_entry
+
+RESOURCES += \
+    resources/icons/icons.qrc

@@ -1,21 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QAction *action = new QAction(this);
-    QIcon icon;
-    auto iconThemeName = QStringLiteral("list-add");
-    if (QIcon::hasThemeIcon(iconThemeName)) {
-        icon = QIcon::fromTheme(iconThemeName);
-    } else {
-        icon.addFile(QStringLiteral("."), QSize(), QIcon::Normal, QIcon::Off);
-    }
-    action->setIcon(icon);
-    ui->mainToolBar->addAction(action);
+
+    // There is no warranty that a given icon will be present in the target platform icons theme
+    // therefore we must provide a fallback
+    QIcon addIcon = QIcon::fromTheme("list-add", QIcon(":/scalable/list-add.svg"));
+    QAction *addAction = new QAction(addIcon, tr("&Add..."), this);
+
+    ui->mainToolBar->addAction(addAction);
 }
 
 MainWindow::~MainWindow()

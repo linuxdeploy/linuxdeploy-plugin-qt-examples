@@ -16,6 +16,8 @@ addons:
     - qt510-meta-minimal
     - qt510declarative
     - qt510webengine
+    - qt510svg
+    - qt510imageformats
     - mesa-common-dev
     - cmake
 install:
