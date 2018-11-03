@@ -30,10 +30,22 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
+TRANSLATIONS = i18n/org.appimage.qtwidgetsapplication_es.ts
+
 target.path = $$PREFIX/bin
+
+QMAKE_EXTRA_COMPILERS += lrelease
+lrelease.input         = TRANSLATIONS
+lrelease.output        = i18n/${QMAKE_FILE_BASE}.qm
+lrelease.commands      = $$[QT_INSTALL_BINS]/lrelease ${QMAKE_FILE_IN} -qm i18n/${QMAKE_FILE_BASE}.qm
+lrelease.CONFIG       += no_link target_predeps
+
+translations.path = $$PREFIX/share/org.appimage.qtwidgetsapplication/translations
+translations.files = i18n/org.appimage.qtwidgetsapplication_es.qm
+
 icon.path = $$PREFIX/share/icons/hicolor/512x512/apps
 icon.files = QtWidgetsApplication.png
 
 desktop_entry.path = $$PREFIX/share/applications
 desktop_entry.files = QtWidgetsApplication.desktop
-INSTALLS += target icon desktop_entry
+INSTALLS += target translations icon desktop_entry

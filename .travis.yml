@@ -16,6 +16,8 @@ addons:
     - qt510-meta-minimal
     - qt510declarative
     - qt510webengine
+    - qt510tools
+    - qt510translations
     - mesa-common-dev
     - cmake
 install:

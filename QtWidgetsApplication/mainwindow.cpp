@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QAction *action = new QAction(this);
+
     QIcon icon;
     auto iconThemeName = QStringLiteral("list-add");
     if (QIcon::hasThemeIcon(iconThemeName)) {
@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     } else {
         icon.addFile(QStringLiteral("."), QSize(), QIcon::Normal, QIcon::Off);
     }
-    action->setIcon(icon);
+
+    QAction *action = new QAction(icon, tr("Add"), this);
     ui->mainToolBar->addAction(action);
 }
 
