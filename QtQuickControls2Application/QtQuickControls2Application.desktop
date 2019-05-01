@@ -7,3 +7,4 @@ TryExec=QtQuickControls2Application
 Exec=QtQuickControls2Application
 Icon=QtQuickControls2Application
 MimeType=image/x-foo;
+Categories=Utility;
