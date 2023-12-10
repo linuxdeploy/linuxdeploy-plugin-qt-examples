@@ -31,11 +31,13 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 target.path = $$PREFIX/bin
+
 icon.path = $$PREFIX/share/icons/hicolor/512x512/apps
 icon.files = QtWidgetsApplication.png
 
 desktop_entry.path = $$PREFIX/share/applications
 desktop_entry.files = QtWidgetsApplication.desktop
+
 INSTALLS += target icon desktop_entry
 
 RESOURCES += \
